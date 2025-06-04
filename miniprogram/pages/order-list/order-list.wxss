@@ -1,0 +1,61 @@
+.page-container {
+  padding: 40rpx;
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+  margin: 20rpx;
+}
+
+.title {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-size: 48rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.order-item {
+  margin-top: 24rpx;
+  padding: 32rpx;
+  border: 1px solid #eee;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.order-item:hover {
+  transform: scale(1.01);
+}
+
+.order-info {
+  margin-bottom: 16px;
+}
+
+.order-name {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.order-price, .order-status {
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.button {
+  width: 180rpx;
+  text-align: center;
+  height: 72rpx;
+  color: white;
+  border-radius: 36rpx;
+  line-height: 72rpx;
+  background-color: #07c160;
+  font-size: 32rpx;
+  box-shadow: 0 2rpx 4rpx rgba(7, 193, 96, 0.3);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #05a852;
+}

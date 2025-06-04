@@ -1,0 +1,16 @@
+<view class="my-component">
+  <!-- 使用外部传入的属性 -->
+  <view class="title">{{title}}</view>
+  
+  <!-- 使用内部数据 -->
+  <view class="content" wx:if="{{showContent}}">
+    {{message}}
+    <view class="count">计数: {{count}}</view>
+  </view>
+  
+  <!-- 绑定事件处理函数 -->
+  <button class="btn" bindtap="handleClick">点击我</button>
+  <button class="toggle-btn" bindtap="toggleContent">
+    {{showContent ? '隐藏内容' : '显示内容'}}
+  </button>
+</view>

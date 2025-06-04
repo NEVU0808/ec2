@@ -1,0 +1,27 @@
+{
+  "name": "players",
+  "version": "1.0.0",
+  "description": "nevu", 
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "cloudbase functions:deploy", 
+    "dev": "nodemon index.js" 
+  },
+  "author": "nevu <1586893940@qq.com>", 
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "2.4.0" 
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/quickstartFunctions.git" 
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/quickstartFunctions/issues" 
+  },
+  "homepage": "https://github.com/yourusername/quickstartFunctions#readme" 
+}

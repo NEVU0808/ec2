@@ -1,0 +1,50 @@
+<!-- pages/withdraw-record/withdraw-record.wxml -->
+<view class="container" style="height: 1220rpx; display: flex; box-sizing: border-box">
+  <!-- 欢迎区域 -->
+  <view class="welcome-section">
+    <text class="welcome-title">Hello, {{user ? user.username : '用户'}}</text>
+    <text class="welcome-subtitle">让我们开始今天的工作吧</text>
+  </view>
+  
+  <!-- 功能卡片区 -->
+  <view class="dashboard-grid">
+    <view class="dashboard-card" bindtap="navigateToOrders">
+      <image class="card-icon" src="/images/orders-icon.png" mode="aspectFit"></image>
+      <text class="card-title">结单</text>
+      <text class="card-desc">查看和处理结单信息</text>
+    </view>
+    
+    <view class="dashboard-card" bindtap="navigateToProfile">
+      <image class="card-icon" src="/images/profile-icon.png" mode="aspectFit"></image>
+      <text class="card-title">我的</text>
+      <text class="card-desc">查看个人信息和设置</text>
+    </view>
+    
+    <view class="dashboard-card" bindtap="navigateToStatistics">
+      <image class="card-icon" src="/images/statistics-icon.png" mode="aspectFit"></image>
+      <text class="card-title">统计</text>
+      <text class="card-desc">查看业务统计数据</text>
+    </view>
+  </view>
+  
+  <!-- 最新订单区 -->
+  <view class="card">
+    <view class="card-header">
+      <text class="card-title">最新订单</text>
+      <text class="view-all" bindtap="navigateToOrders">查看全部</text>
+    </view>
+    
+    <view class="order-list">
+      <block wx:for="{{recentOrders}}" wx:key="id">
+        <order-card order="{{item}}" />
+      </block>
+      
+      <block wx:if="{{recentOrders.length === 0}}">
+        <view class="no-data">
+          <image class="empty-icon" src="/images/empty-icon.png" mode="aspectFit"></image>
+          <text class="empty-text">暂无订单</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<view class="page-container">
+  <view class="title">{{welcomeMessage}}</view>
+  <view class="button" bindtap="onButtonClick">探索陪玩服务</view>
+</view>

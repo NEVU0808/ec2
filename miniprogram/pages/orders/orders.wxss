@@ -1,0 +1,87 @@
+/* pages/orders/orders.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.loading {
+  text-align: center;
+  padding: 50rpx;
+}
+
+.error {
+  text-align: center;
+  padding: 50rpx;
+}
+
+.error button {
+  margin-top: 20rpx;
+  padding: 10rpx 20rpx;
+  background-color: #07c160;
+  color: white;
+  border-radius: 8rpx;
+}
+
+.order-list {
+  margin-top: 20rpx;
+}
+
+.order-item {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.1);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.order-title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.order-status {
+  font-size: 28rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 6rpx;
+}
+
+.status-success {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.status-pending {
+  background-color: #fff7e6;
+  color: #fa8c16;
+}
+
+.status-canceled {
+  background-color: #fff1f0;
+  color: #f5222d;
+}
+
+.order-date {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.add-btn {
+  position: fixed;
+  bottom: 60rpx;
+  right: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background-color: #c10707;
+  color: white;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 48rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.2);
+}

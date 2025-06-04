@@ -1,0 +1,11 @@
+<view class="page-container" style="height: 1312rpx; display: block; box-sizing: border-box">
+  <view class="title">陪玩管理</view>
+  <view wx:for="{{players}}" wx:key="id" class="player-item">
+    <view class="player-info">
+      <view class="player-name">{{item.name}}</view>
+      <view class="player-phone">{{item.phone}}</view>
+    </view>
+    <view class="button" bindtap="viewPlayerDetail" data-player-id="{{item.id}}">查看详情</view>
+    <view class="button" bindtap="disablePlayer" data-player-id="{{item.id}}">禁用陪玩</view>
+  </view>
+</view>

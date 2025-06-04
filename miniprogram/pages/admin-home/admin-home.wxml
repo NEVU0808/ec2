@@ -1,0 +1,5 @@
+<view class="page-container">
+  <view class="title">{{welcomeMessage}}</view>
+  <view class="button" bindtap="manageUsers">管理用户</view>
+  <view class="button" bindtap="managePlayers" style="position: relative; left: -138rpx; top: 0rpx">管理陪玩</view>
+</view>

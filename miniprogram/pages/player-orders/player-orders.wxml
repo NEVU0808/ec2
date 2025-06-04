@@ -1,0 +1,12 @@
+<view class="page-container">
+  <view class="title">我的订单</view>
+  <view wx:for="{{orders}}" wx:key="id" class="order-item">
+    <view class="order-info">
+      <view class="order-name">{{item.serviceName}}</view>
+      <view class="order-price">价格：{{item.price}} 元</view>
+      <view class="order-status">状态：{{item.status}}</view>
+    </view>
+    <view wx:if="{{item.status === '待接单'}}" class="button" bindtap="acceptOrder" data-order-id="{{item.id}}">接单</view>
+    <view wx:if="{{item.status === '进行中'}}" class="button" bindtap="completeOrder" data-order-id="{{item.id}}">完成订单</view>
+  </view>
+</view>

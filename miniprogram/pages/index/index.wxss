@@ -1,0 +1,28 @@
+/** pages/index/index.wxss **/
+/* 继承 app.wxss 的通用样式，只需添加特定样式 */
+.quick-action {
+  display: flex;
+  justify-content: space-around;
+  margin: 40rpx 0;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.action-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+}
+
+.action-text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.recent-orders {
+  margin-top: 40rpx;
+}

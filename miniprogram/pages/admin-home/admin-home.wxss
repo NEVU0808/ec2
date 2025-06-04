@@ -1,0 +1,35 @@
+.page-container {
+  padding: 40rpx;
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 16rpx; /* 添加圆角 */
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  margin: 20rpx;
+}
+
+.title {
+  margin-top: 16px;
+  margin-bottom: 24px; /* 增加底部边距 */
+  font-size: 48rpx;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.button {
+  width: 360rpx;
+  text-align: center;
+  margin: 60rpx auto 0 auto;
+  height: 96rpx;
+  color: white;
+  border-radius: 48rpx; /* 更大的圆角 */
+  line-height: 96rpx;
+  background-color: #07c160;
+  font-size: 36rpx; /* 增大字体 */
+  box-shadow: 0 4rpx 8rpx rgba(7, 193, 96, 0.3); /* 添加按钮阴影 */
+  transition: background-color 0.2s ease-in-out; /* 添加过渡效果 */
+}
+
+.button:hover {
+  background-color: #05a852; /* 鼠标悬停时颜色变化 */
+}

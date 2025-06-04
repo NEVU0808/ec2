@@ -1,0 +1,6 @@
+<view class="page-container">
+  <view class="title">{{service.name}}</view>
+  <view class="info">价格：{{service.price}} 元</view>
+  <view class="info">{{service.description}}</view>
+  <view class="button" bindtap="bookService">预订服务</view>
+</view>

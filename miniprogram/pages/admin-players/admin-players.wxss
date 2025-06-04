@@ -1,0 +1,110 @@
+/* 基础样式 */
+.page-container {
+  padding: 20rpx 40rpx;
+  background-color: white;
+  font-family: 'PingFang SC', sans-serif;
+}
+
+.title {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #000;
+}
+
+.player-item {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.player-item:hover {
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.05);
+  border-color: #ddd;
+}
+
+.player-info {
+  margin-bottom: 12rpx;
+}
+
+.player-name {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000;
+}
+
+.player-phone {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 4rpx;
+}
+
+.button {
+  display: inline-block;
+  width: 150rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: white;
+  border-radius: 5px;
+  background-color: #07c160;
+  margin-right: 10rpx;
+  transition: all 0.2s;
+  box-shadow: 0 2rpx 4rpx rgba(7, 193, 96, 0.3);
+}
+
+.button:hover {
+  background-color: #05a852;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
+
+/* 工具类 */
+.mr-2_5 {
+  margin-right: 10rpx;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-gray-500 {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.rounded-md {
+  border-radius: 4px;
+}
+
+.bg-primary {
+  background-color: #07c160;
+}
+
+.hover-bg-primary-hover:hover {
+  background-color: #05a852;
+}
+
+.shadow-sm {
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.05);
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.05);
+}
+
+.transition-all {
+  transition: all 0.2s;
+}
+
+.duration-200 {
+  transition-duration: 0.2s;
+}

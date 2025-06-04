@@ -1,0 +1,45 @@
+.page-container {
+  padding: 20rpx 40rpx;
+  background-color: white;
+  font-family: PingFang SC;
+}
+
+.title {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #000;
+}
+
+.order-item {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.order-info {
+  margin-bottom: 12px;
+}
+
+.order-name {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000;
+}
+
+.order-price, .order-status {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.button {
+  width: 150rpx;
+  text-align: center;
+  height: 60rpx;
+  color: white;
+  border-radius: 5px;
+  line-height: 60rpx;
+  background-color: #07c160;
+}

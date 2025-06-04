@@ -1,0 +1,43 @@
+.my-component {
+  padding: 20rpx;
+  margin: 20rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 10rpx;
+  background-color: #f8f8f8;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.content {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.count {
+  color: #07c160;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+.btn {
+  background-color: #07c160;
+  color: white;
+  border-radius: 8rpx;
+  padding: 12rpx 24rpx;
+  font-size: 28rpx;
+}
+
+.toggle-btn {
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 8rpx;
+  padding: 12rpx 24rpx;
+  font-size: 28rpx;
+  margin-top: 15rpx;
+}

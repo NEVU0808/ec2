@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="title">订单统计</view>
+  <view class="card">
+    <view class="time-filter">
+      <text>时间范围：</text>
+      <text>2025-05-23 - 2025-05-29</text>
+      <icon type="arrowright" size="28" />
+    </view>
+    <view class="data-item">游戏单量：<text class="divider">---</text></view>
+    <view class="data-item">订单量：<text class="divider">---</text></view>
+    <view class="data-item">订单金额：0.00</view>
+    <view class="data-item">公司收益：0.00</view>
+    <view class="data-item">陪玩收益：0.00</view>
+    <view class="data-item">退款单量：<text class="divider">---</text></view>
+    <view class="data-item">退款金额：0.00</view>
+  </view>
+</view>

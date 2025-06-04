@@ -1,0 +1,23 @@
+a<!-- pages/login/login.wxml -->
+<view class="container" style="height: 1408rpx; display: flex; box-sizing: border-box">
+  <text>这是登录页面</text>
+  <view class="logo-container">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <text class="app-name">NEVU</text>
+  </view>
+  <!-- 正确示例 -->
+<my-component prop="value"></my-component>
+  <view class="login-btn-container">
+    <button class="login-btn" bindtap="handleWechatLogin">
+      <image class="wechat-icon" src="/images/wechat-icon.png"></image>
+      <text class="btn-text" style="position: relative; left: -38rpx; top: -1rpx">微信登录</text>
+    </button>
+  </view>
+  
+  <view class="policy-container">
+    <text class="policy-text">登录即表示同意</text>
+    <text class="policy-link">用户协议</text>
+    <text class="policy-text">和</text>
+    <text class="policy-link">隐私政策</text>
+  </view>
+</view>

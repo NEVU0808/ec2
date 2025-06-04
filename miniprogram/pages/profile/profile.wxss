@@ -1,0 +1,49 @@
+/** pages/profile/profile.wxss **/
+/* 继承 app.wxss 的通用样式，添加特定样式 */
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.user-avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.user-id {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.menu-list {
+  margin-top: 30rpx;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.menu-text {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.menu-icon {
+  width: 24rpx;
+  height: 24rpx;
+}

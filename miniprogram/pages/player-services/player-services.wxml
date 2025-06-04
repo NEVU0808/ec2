@@ -1,0 +1,13 @@
+<view class="page-container">
+  <view class="title">我的服务</view>
+  <view wx:for="{{services}}" wx:key="id" class="service-item">
+    <view class="service-info">
+      <view class="service-name">{{item.name}}</view>
+      <view class="service-price">价格：{{item.price}} 元</view>
+      <view class="service-description">{{item.description}}</view>
+    </view>
+    <view class="button" bindtap="editService" data-service-id="{{item.id}}">编辑服务</view>
+    <view class="button" bindtap="deleteService" data-service-id="{{item.id}}">删除服务</view>
+  </view>
+  <view class="button" bindtap="addService">添加服务</view>
+</view>

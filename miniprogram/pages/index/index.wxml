@@ -1,0 +1,58 @@
+<!-- pages/index/index.wxml -->
+<view class="sidebar">
+  <view class="logo">
+    <text class="logo-icon">🎮</text>
+    <text class="logo-text">陪玩平台</text>
+  </view>
+  <view class="nav-links">
+    <navigator url="/pages/index/index" class="active">
+      <text class="icon">🏠</text>
+      <text>首页</text>
+    </navigator>
+    <navigator url="/pages/orders/orders">
+      <text class="icon">📋</text>
+      <text>订单记录</text>
+    </navigator>
+    <navigator url="/pages/statistics/statistics">
+      <text class="icon">📊</text>
+      <text>统计</text>
+    </navigator>
+    <navigator url="/pages/profile/profile">
+      <text class="icon">👤</text>
+      <text>我的</text>
+    </navigator>
+    <navigator url="/pages/withdraw-record/withdraw-record">
+      <text class="icon">💸</text>
+      <text>提现记录</text>
+    </navigator>
+    <view bindtap="logout">
+      <text class="icon">🚪</text>
+      <text>退出登录</text>
+    </view>
+  </view>
+</view>
+<view class="main-content">
+  <view class="header">
+    <view class="header-left">
+      <button class="mobile-toggle" bindtap="toggleSidebar">
+        <text>☰</text>
+      </button>
+      <text class="header-title">首页</text>
+    </view>
+    <view class="user-actions">
+      <button class="notification-btn">
+        <text>🔔</text>
+        <text class="notification-count">3</text>
+      </button>
+      <view class="user-info">
+        <view class="user-avatar">P</view>
+        <text>PcRo单词</text>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view id="home" class="page active">
+      <!-- 首页内容 -->
+    </view>
+  </view>
+</view>

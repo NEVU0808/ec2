@@ -1,0 +1,11 @@
+<view class="page-container">
+  <view class="title">用户管理</view>
+  <view wx:for="{{users}}" wx:key="id" class="user-item">
+    <view class="user-info">
+      <view class="user-name">{{item.name}}</view>
+      <view class="user-phone">{{item.phone}}</view>
+    </view>
+    <view class="button" bindtap="viewUserDetail" data-user-id="{{item.id}}" style="position: relative; left: 0rpx; top: 4rpx">查看详情</view>
+    <view class="button" bindtap="banUser" data-user-id="{{item.id}}" style="position: relative; left: -3rpx; top: 5rpx">封禁用户</view>
+  </view>
+</view>
