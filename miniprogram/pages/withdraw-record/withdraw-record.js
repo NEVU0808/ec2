@@ -1,29 +1,26 @@
 // pages/withdraw-record/withdraw-record.js
 Page({
   data: {
-    withdrawRecords: [
-      {
-        id: 1,
-        amount: 100,
-        date: '2024-10-01',
-        status: '已完成'
-      },
-      {
-        id: 2,
-        amount: 200,
-        date: '2024-10-10',
-        status: '处理中'
-      },
-      {
-        id: 3,
-        amount: 150,
-        date: '2024-10-15',
-        status: '已拒绝'
-      }
-    ]
+    withdrawRecords: []
   },
   onLoad(options) {
-    // 这里可以添加实际获取提现记录的逻辑，例如调用云函数或接口
-    // 目前使用模拟数据
+    const app = getApp();
+    const db = app.db;
+    const userId = app.globalData.userInfo._id; // 假设用户信息中有 _id
+
+    db.collection('withdrawRecords')
+      .where({
+        userId
+      })
+      .get({
+        success: res => {
+          this.setData({
+            withdrawRecords: res.data
+          });
+        },
+        fail: err => {
+          console.error('查询提现记录失败', err);
+        }
+      });
   }
-})
+});

@@ -1,49 +1,122 @@
-/** pages/profile/profile.wxss **/
-/* 继承 app.wxss 的通用样式，添加特定样式 */
-.user-info {
+.profile-container {
+  padding: 20px;
+}
+
+.profile-header {
   display: flex;
   align-items: center;
-  padding: 30rpx 0;
-  border-bottom: 1rpx solid #eee;
+  margin-bottom: 30px;
 }
 
-.user-avatar {
-  width: 160rpx;
-  height: 160rpx;
+.profile-avatar {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin-right: 30rpx;
+  overflow: hidden;
+  margin-right: 20px;
 }
 
-.user-name {
-  font-size: 36rpx;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 10rpx;
+.profile-avatar image {
+  width: 100%;
+  height: 100%;
 }
 
-.user-id {
-  font-size: 28rpx;
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-phone {
+  font-size: 16px;
   color: #666;
 }
 
-.menu-list {
-  margin-top: 30rpx;
-}
-
-.menu-item {
+.profile-balance {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 30rpx 0;
-  border-bottom: 1rpx solid #eee;
+  margin-bottom: 30px;
 }
 
-.menu-text {
-  font-size: 32rpx;
-  color: #333;
+.balance-card {
+  width: 30%;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.balance-title {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.balance-amount {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.withdraw-btn {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-menu {
+  margin-top: 30px;
+}
+
+.menu-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-card {
+  width: 48%;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .menu-icon {
-  width: 24rpx;
-  height: 24rpx;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.menu-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.menu-desc {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.logout-btn {
+  margin-top: 20px;
+  background-color: #f44336;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
 }

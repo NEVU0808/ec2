@@ -1,66 +1,93 @@
 // pages/orders/orders.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    orders: [],
+    loading: false,
+    error: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getOrders();
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 获取订单列表
    */
-  onReady() {
+  getOrders() {
+    this.setData({ loading: true, error: null });
+    const app = getApp();
+    const db = app.db;
+    const userInfo = app.globalData.userInfo;
 
+    // 检查 userInfo 是否存在
+    if (!userInfo || !userInfo._id) {
+      console.error('用户信息为空或缺少 _id 属性');
+      this.setData({
+        error: '请先登录',
+        loading: false
+      });
+      wx.navigateTo({
+        url: '/pages/login/login'
+      });
+      return;
+    }
+
+    const userId = userInfo._id;
+
+    db.collection('orders')
+      .where({
+        playerId: userId
+      })
+      .get({
+        success: res => {
+          this.setData({
+            orders: res.data,
+            loading: false
+          });
+        },
+        fail: err => {
+          console.error('查询订单数据失败', err);
+          this.setData({
+            error: '查询订单数据失败，请重试',
+            loading: false
+          });
+        }
+      });
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 查看订单详情
    */
-  onShow() {
-
+  viewOrderDetail(e) {
+    const orderId = e.currentTarget.dataset.id;
+    console.log(`用户查看订单详情，订单 ID：${orderId}`);
+    wx.navigateTo({
+      url: `/pages/order-detail/order-detail?orderId=${orderId}`
+    });
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * 添加订单
    */
-  onHide() {
-
+  addOrder() {
+    console.log('用户点击了添加订单按钮');
+    // 这里可以添加添加订单的逻辑，例如跳转到添加订单页面
+    wx.navigateTo({
+      url: '/pages/add-order/add-order' // 假设存在添加订单的页面
+    });
   },
 
   /**
-   * 生命周期函数--监听页面卸载
+   * 退出登录
    */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  logout() {
+    const app = getApp();
+    app.logout();
   }
-})
+});

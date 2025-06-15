@@ -1,66 +1,54 @@
-// pages/profile/profile.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    user: null
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    this.loadUserInfo();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow() {
-
+    this.loadUserInfo();
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  loadUserInfo() {
+    const user = wx.getStorageSync('user');
+    if (user) {
+      this.setData({ user });
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  navigateToOrders() {
+    wx.navigateTo({
+      url: '/pages/orders/orders'
+    });
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  navigateToTransactions() {
+    wx.navigateTo({
+      url: '/pages/transactions/transactions'
+    });
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
+  navigateToWithdrawals() {
+    wx.navigateTo({
+      url: '/pages/withdrawals/withdrawals'
+    });
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  navigateToSecurity() {
+    wx.navigateTo({
+      url: '/pages/security/security'
+    });
+  },
+  logout() {
+    // 清除本地存储的用户信息
+    wx.removeStorageSync('user');
+    const app = getApp();
+    app.globalData.userInfo = null;
+    // 跳转到登录页面
+    wx.reLaunch({
+      url: '/pages/login/login'
+    });
   }
-})
+});

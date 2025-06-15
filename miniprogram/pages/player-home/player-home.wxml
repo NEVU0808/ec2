@@ -8,7 +8,7 @@
   
   <!-- 功能卡片区 -->
   <view class="dashboard-grid">
-    <view class="dashboard-card" bindtap="navigateToOrders">
+    <view class="dashboard-card" bindtap="navigateToOrderList">
       <image class="card-icon" src="/images/orders-icon.png" mode="aspectFit"></image>
       <text class="card-title">结单</text>
       <text class="card-desc">查看和处理结单信息</text>

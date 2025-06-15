@@ -1,5 +1,53 @@
 {
-  "usingComponents": {
-    "my-component": "/components/myComponent/myComponent" 
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",        
+    "pages/example/index",     
+    "pages/admin-home/admin-home", 
+    "pages/admin-players/admin-players", 
+    "pages/admin-users/admin-users", 
+    "pages/player-home/player-home", 
+    "pages/player-services/player-services", 
+    "pages/user-home/user-home", 
+    "pages/service-detail/service-detail", 
+    "pages/order-list/order-list", 
+    "pages/orders/orders",       
+    "pages/statistics/statistics", 
+    "pages/profile/profile",     
+    "pages/withdraw-record/withdraw-record" 
+  ],
+  "window": {
+    "backgroundColor": "#f5f7fa", 
+    "backgroundTextStyle": "light", 
+    "navigationBarBackgroundColor": "#4361ee", 
+    "navigationBarTitleText": "陪玩平台", 
+    "navigationBarTextStyle": "white", 
+    "enablePullDownRefresh": false 
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#4361ee",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页" 
+      },
+      {
+        "pagePath": "pages/orders/orders",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json", 
+  "style": "v2", 
+  "lazyCodeLoading": "requiredComponents", 
+  "useExtendedLib": {
+    "weui": true 
   }
 }

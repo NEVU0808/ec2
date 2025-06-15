@@ -6,20 +6,17 @@ Page({
     users: []
   },
   onLoad() {
-    const mockUsers = [
-      {
-        id: 1,
-        name: '用户 A',
-        phone: '13800138000'
+    const app = getApp();
+    const db = app.db;
+    db.collection('users').get({
+      success: res => {
+        this.setData({
+          users: res.data
+        });
       },
-      {
-        id: 2,
-        name: '用户 B',
-        phone: '13900139000'
+      fail: err => {
+        console.error('查询用户数据失败', err);
       }
-    ];
-    this.setData({
-      users: mockUsers
     });
   },
   async viewUserDetail(e) {
@@ -49,14 +46,30 @@ Page({
   banUser(e) {
     const userId = e.currentTarget.dataset.userId;
     console.log(`管理员封禁用户，用户 ID：${userId}`);
-    // 这里可以添加封禁用户的逻辑，例如调用 API 封禁用户
-    wx.showToast({
-      title: '用户已封禁',
-      icon: 'success'
-    });
-    const users = this.data.users.filter(user => user.id !== userId);
-    this.setData({
-      users
+    const app = getApp();
+    const db = app.db;
+    // 调用数据库更新操作来封禁用户，例如添加一个 isBanned 字段
+    db.collection('users').doc(userId).update({
+      data: {
+        isBanned: true
+      },
+      success: res => {
+        wx.showToast({
+          title: '用户已封禁',
+          icon: 'success'
+        });
+        const users = this.data.users.filter(user => user._id !== userId);
+        this.setData({
+          users
+        });
+      },
+      fail: err => {
+        console.error('封禁用户失败', err);
+        wx.showToast({
+          title: '封禁用户失败',
+          icon: 'none'
+        });
+      }
     });
   }
 });

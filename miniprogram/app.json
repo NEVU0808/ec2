@@ -16,6 +16,12 @@
     "pages/profile/profile",     
     "pages/withdraw-record/withdraw-record" 
   ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["__APP__"]
+    }
+  },
   "window": {
     "backgroundColor": "#f5f7fa", 
     "backgroundTextStyle": "light", 

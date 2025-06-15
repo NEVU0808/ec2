@@ -40,6 +40,9 @@ App({
         this.globalData.loginReady = true;
         this._checkPendingPages();
       });
+
+    // 重写全局跳转方法，添加登录拦截
+    this.overrideNavigateMethods();
   },
   
   // 检查登录状态
@@ -189,5 +192,63 @@ App({
   // 获取当前用户信息
   getUserInfo: function() {
     return this.globalData.userInfo;
+  },
+
+  // 重写全局跳转方法，添加登录拦截
+  overrideNavigateMethods: function() {
+    const originalNavigateTo = wx.navigateTo;
+    const originalRedirectTo = wx.redirectTo;
+    const originalReLaunch = wx.reLaunch;
+    const originalSwitchTab = wx.switchTab;
+
+    const that = this;
+
+    wx.navigateTo = function(options) {
+      if (!that.isUserLoggedIn()) {
+        wx.showToast({
+          title: '请先登录',
+          icon: 'none'
+        });
+        that.login();
+        return;
+      }
+      originalNavigateTo(options);
+    };
+
+    wx.redirectTo = function(options) {
+      if (!that.isUserLoggedIn()) {
+        wx.showToast({
+          title: '请先登录',
+          icon: 'none'
+        });
+        that.login();
+        return;
+      }
+      originalRedirectTo(options);
+    };
+
+    wx.reLaunch = function(options) {
+      if (!that.isUserLoggedIn()) {
+        wx.showToast({
+          title: '请先登录',
+          icon: 'none'
+        });
+        that.login();
+        return;
+      }
+      originalReLaunch(options);
+    };
+
+    wx.switchTab = function(options) {
+      if (!that.isUserLoggedIn()) {
+        wx.showToast({
+          title: '请先登录',
+          icon: 'none'
+        });
+        that.login();
+        return;
+      }
+      originalSwitchTab(options);
+    };
   }
 });

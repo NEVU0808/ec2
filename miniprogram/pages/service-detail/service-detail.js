@@ -1,18 +1,23 @@
 // pages/service-detail/service-detail.js
+const { callCloudFunction } = require('../../utiles/cloudFunctionUtils.js');
+
 Page({
   data: {
     service: null
   },
   onLoad(options) {
     const serviceId = options.serviceId;
-    const mockService = {
-      id: serviceId,
-      name: '热门游戏陪玩服务',
-      price: 50,
-      description: '专业陪玩，带你畅玩游戏'
-    };
-    this.setData({
-      service: mockService
+    const app = getApp();
+    const db = app.db;
+    db.collection('services').doc(serviceId).get({
+      success: res => {
+        this.setData({
+          service: res.data
+        });
+      },
+      fail: err => {
+        console.error('查询服务数据失败', err);
+      }
     });
   },
   bookService() {

@@ -1,19 +1,29 @@
-a<!-- pages/login/login.wxml -->
-<view class="container" style="height: 1408rpx; display: flex; box-sizing: border-box">
-  <text>这是登录页面</text>
+<!-- pages/login/login.wxml -->
+<view class="container">
   <view class="logo-container">
     <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
     <text class="app-name">NEVU</text>
   </view>
-  <!-- 正确示例 -->
-<my-component prop="value"></my-component>
-  <view class="login-btn-container">
-    <button class="login-btn" bindtap="handleWechatLogin">
+  <view class="input-container">
+    <view class="input-wrapper">
+      <image class="input-icon" src="/images/phone-icon.png"></image>
+      <input placeholder="请输入电话号码" bindinput="handlePhoneInput" />
+    </view>
+    <view class="input-wrapper">
+      <image class="input-icon" src="/images/password-icon.png"></image>
+      <input placeholder="请输入密码" password bindinput="handlePasswordInput" />
+    </view>
+  </view>
+  <view class="button-container">
+    <button class="login-btn" bindtap="handleLogin">登录</button>
+    <button class="register-btn" bindtap="handleRegister">注册</button>
+  </view>
+  <view class="wechat-login-container">
+    <button class="wechat-login-btn" bindtap="handleWechatLogin">
       <image class="wechat-icon" src="/images/wechat-icon.png"></image>
-      <text class="btn-text" style="position: relative; left: -38rpx; top: -1rpx">微信登录</text>
+      <text style="position: relative; left: 16rpx; top: -1rpx">微信登录</text>
     </button>
   </view>
-  
   <view class="policy-container">
     <text class="policy-text">登录即表示同意</text>
     <text class="policy-link">用户协议</text>

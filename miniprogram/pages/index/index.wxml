@@ -1,58 +1,55 @@
-<!-- pages/index/index.wxml -->
-<view class="sidebar">
-  <view class="logo">
-    <text class="logo-icon">🎮</text>
-    <text class="logo-text">陪玩平台</text>
+<view class="container">
+  <!-- 欢迎区域 -->
+  <view class="welcome-section">
+    <text class="welcome-title">Hello, {{user ? user.username : '用户'}}</text>
+    <text class="welcome-subtitle">让我们开始今天的工作吧</text>
   </view>
-  <view class="nav-links">
-    <navigator url="/pages/index/index" class="active">
-      <text class="icon">🏠</text>
-      <text>首页</text>
-    </navigator>
-    <navigator url="/pages/orders/orders">
-      <text class="icon">📋</text>
-      <text>订单记录</text>
-    </navigator>
-    <navigator url="/pages/statistics/statistics">
-      <text class="icon">📊</text>
-      <text>统计</text>
-    </navigator>
-    <navigator url="/pages/profile/profile">
-      <text class="icon">👤</text>
-      <text>我的</text>
-    </navigator>
-    <navigator url="/pages/withdraw-record/withdraw-record">
-      <text class="icon">💸</text>
-      <text>提现记录</text>
-    </navigator>
-    <view bindtap="logout">
-      <text class="icon">🚪</text>
-      <text>退出登录</text>
+  
+  <!-- 功能卡片区 -->
+  <view class="dashboard-grid">
+    <view class="dashboard-card" bindtap="navigateToOrderList" style="width: 277rpx; display: flex; box-sizing: border-box; height: 141rpx; left: 0rpx; top: 0rpx">
+      
+      <view class="card-content">
+        <text class="card-title" style="position: relative; left: 0rpx; top: -23rpx">结单</text>
+        
+      </view>
     </view>
-  </view>
-</view>
-<view class="main-content">
-  <view class="header">
-    <view class="header-left">
-      <button class="mobile-toggle" bindtap="toggleSidebar">
-        <text>☰</text>
-      </button>
-      <text class="header-title">首页</text>
+    
+    <view class="dashboard-card" bindtap="navigateToProfile" style="width: 295rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx; height: 141rpx">
+      
+      <view class="card-content">
+        <text class="card-title" style="position: relative; left: 0rpx; top: -23rpx">我的</text>
+        
+      </view>
     </view>
-    <view class="user-actions">
-      <button class="notification-btn">
-        <text>🔔</text>
-        <text class="notification-count">3</text>
-      </button>
-      <view class="user-info">
-        <view class="user-avatar">P</view>
-        <text>PcRo单词</text>
+    
+    <view class="dashboard-card" bindtap="navigateToStatistics" style="height: 141rpx; display: flex; box-sizing: border-box; width: 272rpx">
+      
+      <view class="card-content">
+        <text class="card-title" style="position: relative; left: 0rpx; top: -23rpx">统计</text>
+        
       </view>
     </view>
   </view>
-  <view class="content">
-    <view id="home" class="page active">
-      <!-- 首页内容 -->
+  
+  <!-- 最新订单区 -->
+  <view class="card" style="height: 752rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+    <view class="card-header">
+      <text class="card-title">最新订单</text>
+      <text class="view-all" bindtap="navigateToOrders">查看全部</text>
+    </view>
+    
+    <view class="order-list">
+      <block wx:for="{{recentOrders}}" wx:key="id">
+        <order-card order="{{item}}" />
+      </block>
+      
+      <block wx:if="{{recentOrders.length === 0}}">
+        <view class="no-data" style="height: 504rpx; display: block; box-sizing: border-box">
+          
+          <text class="empty-text" style="position: relative; left: -77rpx; top: -37rpx">暂无订单</text>
+        </view>
+      </block>
     </view>
   </view>
 </view>

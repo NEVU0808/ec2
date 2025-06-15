@@ -6,20 +6,17 @@ Page({
     players: []
   },
   onLoad() {
-    const mockPlayers = [
-      {
-        id: 1,
-        name: '陪玩 A',
-        phone: '13700137000'
+    const app = getApp();
+    const db = app.db;
+    db.collection('players').get({
+      success: res => {
+        this.setData({
+          players: res.data
+        });
       },
-      {
-        id: 2,
-        name: '陪玩 B',
-        phone: '13600136000'
+      fail: err => {
+        console.error('查询陪玩数据失败', err);
       }
-    ];
-    this.setData({
-      players: mockPlayers
     });
   },
   async viewPlayerDetail(e) {
@@ -49,14 +46,29 @@ Page({
   disablePlayer(e) {
     const playerId = e.currentTarget.dataset.playerId;
     console.log(`管理员禁用陪玩，陪玩 ID：${playerId}`);
-    // 这里可以添加禁用陪玩的逻辑，例如调用 API 禁用陪玩
-    wx.showToast({
-      title: '陪玩已禁用',
-      icon: 'success'
-    });
-    const players = this.data.players.filter(player => player.id !== playerId);
-    this.setData({
-      players
+    const app = getApp();
+    const db = app.db;
+    db.collection('players').doc(playerId).update({
+      data: {
+        isDisabled: true
+      },
+      success: res => {
+        wx.showToast({
+          title: '陪玩已禁用',
+          icon: 'success'
+        });
+        const players = this.data.players.filter(player => player._id !== playerId);
+        this.setData({
+          players
+        });
+      },
+      fail: err => {
+        console.error('禁用陪玩失败', err);
+        wx.showToast({
+          title: '禁用陪玩失败',
+          icon: 'none'
+        });
+      }
     });
   }
 });

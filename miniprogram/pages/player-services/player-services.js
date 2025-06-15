@@ -4,50 +4,51 @@ Page({
     services: []
   },
   onLoad() {
-    const mockServices = [
-      {
-        id: 1,
-        name: '热门游戏陪玩服务',
-        price: 50,
-        description: '专业陪玩，带你畅玩游戏'
+    const app = getApp();
+    const db = app.db;
+    db.collection('services').get({
+      success: res => {
+        this.setData({
+          services: res.data
+        });
       },
-      {
-        id: 2,
-        name: '竞技游戏陪练服务',
-        price: 80,
-        description: '提升游戏技能，专业陪练'
+      fail: err => {
+        console.error('查询服务数据失败', err);
       }
-    ];
-    this.setData({
-      services: mockServices
     });
   },
   editService(e) {
     const serviceId = e.currentTarget.dataset.serviceId;
-    console.log(`陪玩编辑服务，服务 ID：${serviceId}`);
-    // 这里可以添加跳转到服务编辑页的逻辑
-    wx.navigateTo({
-      url: `/pages/service-edit/service-edit?serviceId=${serviceId}`
-    });
+    console.log(`编辑服务，服务 ID：${serviceId}`);
+    // 这里可以添加编辑服务的逻辑，例如跳转到编辑页面
   },
   deleteService(e) {
     const serviceId = e.currentTarget.dataset.serviceId;
-    console.log(`陪玩删除服务，服务 ID：${serviceId}`);
-    // 这里可以添加删除服务的逻辑，例如调用 API 删除服务
-    wx.showToast({
-      title: '服务删除成功',
-      icon: 'success'
-    });
-    const services = this.data.services.filter(service => service.id !== serviceId);
-    this.setData({
-      services
+    console.log(`删除服务，服务 ID：${serviceId}`);
+    const app = getApp();
+    const db = app.db;
+    db.collection('services').doc(serviceId).remove({
+      success: res => {
+        wx.showToast({
+          title: '服务已删除',
+          icon: 'success'
+        });
+        const services = this.data.services.filter(service => service._id !== serviceId);
+        this.setData({
+          services
+        });
+      },
+      fail: err => {
+        console.error('删除服务失败', err);
+        wx.showToast({
+          title: '删除服务失败',
+          icon: 'none'
+        });
+      }
     });
   },
   addService() {
-    console.log('陪玩添加服务');
-    // 这里可以添加跳转到服务添加页的逻辑
-    wx.navigateTo({
-      url: '/pages/service-add/service-add'
-    });
+    console.log('添加服务');
+    // 这里可以添加添加服务的逻辑，例如跳转到添加页面
   }
 });

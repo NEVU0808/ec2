@@ -9,7 +9,7 @@
   </view>
   
   <!-- 绑定事件处理函数 -->
-  <button class="btn" bindtap="handleClick">点击我</button>
+  <button class="btn" bindtap="handleClick" style="position: relative; left: 0rpx; top: -20rpx">点击我</button>
   <button class="toggle-btn" bindtap="toggleContent">
     {{showContent ? '隐藏内容' : '显示内容'}}
   </button>

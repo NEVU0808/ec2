@@ -1,2 +1,58 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="profile-container">
+  <view class="profile-header">
+    <view class="profile-avatar">
+      <image src="{{user.avatar}}" mode="aspectFill"></image>
+    </view>
+    <view class="profile-info">
+      <text class="profile-name">{{user.nickname}}</text>
+      <text class="profile-phone">{{user.phone | maskPhone}}</text>
+    </view>
+  </view>
+
+  <view class="profile-balance">
+    <view class="balance-card" style="width: 199rpx; display: block; box-sizing: border-box">
+      <text class="balance-title">可提现</text>
+      <text class="balance-amount">¥{{user.balance}}</text>
+      <button class="withdraw-btn" bindtap="navigateToWithdrawals" style="position: relative; left: 270rpx; top: -299rpx">提现</button>
+    </view>
+    <view class="balance-card">
+      <text class="balance-title">冻结余额</text>
+      <text class="balance-amount">¥{{user.frozen_balance}}</text>
+    </view>
+    <view class="balance-card">
+      <text class="balance-title">本月收益</text>
+      <text class="balance-amount">¥{{user.monthly_income}}</text>
+    </view>
+  </view>
+
+  <view class="profile-menu">
+    <view class="menu-grid">
+      <view class="menu-card" bindtap="navigateToOrders">
+        <image src="/images/icon-orders.png" class="menu-icon"></image>
+        <text class="menu-title">订单记录</text>
+        <text class="menu-desc">查看所有订单记录</text>
+      </view>
+      <view class="menu-card" bindtap="navigateToTransactions">
+        <image src="/images/icon-transactions.png" class="menu-icon"></image>
+        <text class="menu-title">动账记录</text>
+        <text class="menu-desc">查看账户资金变动</text>
+      </view>
+      <view class="menu-card" bindtap="navigateToWithdrawals">
+        <image src="/images/icon-withdrawals.png" class="menu-icon"></image>
+        <text class="menu-title">提现记录</text>
+        <text class="menu-desc">查看提现申请记录</text>
+      </view>
+      <view class="menu-card" bindtap="navigateToSecurity">
+        <image src="/images/icon-security.png" class="menu-icon"></image>
+        <text class="menu-title">账户安全</text>
+        <text class="menu-desc">修改密码和安全设置</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 退出登录按钮 -->
+  <view class="menu-card logout-btn" bindtap="logout" style="height: -160rpx; display: flex; box-sizing: border-box; width: 281rpx">
+        <text class="menu-title">退出登录</text>
+    
+  </view>
+</view>

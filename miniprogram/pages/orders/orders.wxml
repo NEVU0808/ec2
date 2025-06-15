@@ -28,4 +28,7 @@
   
   <!-- 添加订单按钮（示例） -->
   <button class="add-btn" bindtap="addOrder" style="position: fixed; left: 333rpx; top: 1200rpx">添加订单</button>
+  
+  <!-- 退出登录按钮 -->
+  <button class="logout-btn" bindtap="logout" style="position: fixed; left: 333rpx; top: 1280rpx">退出登录</button>
 </view>

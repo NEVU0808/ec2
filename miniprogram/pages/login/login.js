@@ -25,6 +25,11 @@ Page({
             // 通知App登录成功
             const app = getApp();
             app.onLoginSuccess(userInfo);
+
+            // 登录成功后跳转到原来的首页
+            wx.switchTab({
+              url: '/pages/index/index'
+            });
           },
           fail: (err) => {
             wx.showToast({

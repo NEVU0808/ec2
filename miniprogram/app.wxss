@@ -1,6 +1,6 @@
 /** app.wxss **/
 page {
-  background-color: #f8d2ff;
+  background-color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
