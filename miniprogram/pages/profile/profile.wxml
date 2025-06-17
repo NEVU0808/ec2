@@ -8,7 +8,7 @@
       <text class="profile-phone">{{user.phone | maskPhone}}</text>
     </view>
   </view>
-
+  <my-component prop="value"></my-component>
   <view class="profile-balance">
     <view class="balance-card" style="width: 199rpx; display: block; box-sizing: border-box">
       <text class="balance-title">可提现</text>

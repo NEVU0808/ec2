@@ -14,7 +14,8 @@
     "pages/orders/orders",       
     "pages/statistics/statistics", 
     "pages/profile/profile",     
-    "pages/withdraw-record/withdraw-record" 
+    "pages/withdraw-record/withdraw-record" ,
+    "utils/base_page"
   ],
   "preloadRule": {
     "pages/index/index": {

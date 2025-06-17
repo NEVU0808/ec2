@@ -1,5 +1,5 @@
 // pages/service-detail/service-detail.js
-const { callCloudFunction } = require('../../utiles/cloudFunctionUtils.js');
+const { callCloudFunction } = require('../../utils/cloudFunctionUtils.js');
 
 Page({
   data: {
